@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentin | ❤</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .todo {
+            align-items: center;
+            position: center;
+            text-align: center;
+
+        }
+
+        body {
+            background: linear-gradient(pink, rgb(255, 225, 231), rgb(240, 186, 195));
+            justify-content: center;
+            opacity: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+
+            font-family: "Roboto Condensed", serif;
+            font-optical-sizing: auto;
+            font-weight: 1;
+            font-style: normal;
+        }
+        
+        h1 {
+            position: relative;
+        }
+
+        img {
+            position: relative;
+            pointer-events: none;
+            top: -70px;
+            left: 19%;
+            border-radius: 20px;
+            border: none;
+            margin-top: 50px;
+        }
+
+        button {
+            left: -19%;
+            margin-top: -50px;
+            margin-left: 10px;
+            width: 250px;
+            height: 30px;
+        }
+
+        #rojo {
+            background: linear-gradient(red, rgb(146, 22, 22));
+            cursor: pointer;
+            color: white;
+            position: relative;
+            border: none;
+            border-radius: 10px;
+
+            transition: ease-out 0.3s all;
+        }
+        #rojo:hover {
+            transform: rotateX(-5deg) rotateY(20deg);
+        }
+
+        #verde {
+            background: linear-gradient(lime, rgb(24, 179, 24));
+            cursor: pointer;
+            color: white;
+            position: relative;
+            border: none;
+            border-radius: 10px;
+            transition: ease-out 0.3s all;
+        }
+        #verde:hover {
+            transform: rotateX(5deg) rotateY(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="todo">
+        <h1 id="titlep">¿Quieres ser mi San Valentin?</h1>
+        <img id="empieza" src="gato/empieza.gif" width="500px" height="500px">
+        <button id="verde" onclick="clicksi()">SI</button>
+        <button id="rojo" onclick="clickno()">NO</button>
+        <h3 style="opacity: 0.2;">Hecho por gekoxd.</h1>
+    </div>
+</body>
+<script>
+  imagen = document.getElementById("empieza");
+  title = document.getElementById("titlep");
+  let yapresiono = false;
+  window.onload = () => {
+    gsap.to("body", { opacity: 1, y: 0, duration: 0.5 });
+  };
+
+  function clicksi() {
+    if (yapresiono == true) {
+        title.innerHTML = "Por que dices que si cuando dijistes que no 🙁😡";
+    } else {
+        imagen.src = "https://i.pinimg.com/originals/9b/dc/c6/9bdcc6206c1d36a37149d31108c6bb41.gif";
+        title.innerHTML = "Sabia que dirias que Si ❤";
+    }
+  }
+
+  function clickno() {
+    title.innerHTML = "Luego no pidas regalos 🎁.";
+    yapresiono = true
+    imagen.src = "https://cdn.discordapp.com/attachments/1274851085873451110/1335008643325755546/image.png?ex=679e9b2f&is=679d49af&hm=afe378e511b87110f5dbcfa015290797fa0543584307859fe441c054a230f7b5&";
+    console.log("No!");
+  }
+  </script>
+</html>
